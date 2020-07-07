@@ -1,0 +1,20 @@
+- name: copy encrypted ssh key from master host to destination host
+  copy:
+    src: "{{ test_ssh_key }}"
+    dest: /root/.ssh/test_key
+    owner: root
+    group: root
+    mode: '0644'
+
+
+
+- name: copy SSL certificate from master host to destination host
+  copy:
+    src: ./roles/nginx/files/ssl_cert/{{ item }}
+    dest: /etc/ssl/{{ item }}
+    owner: root
+    group: root
+    mode: '0644'
+  with_items:
+          - ssl_cert.crt
+          - ssl_cert.key

@@ -1,0 +1,13 @@
+{% for mounts in ansible_mounts %}
+Mountpoint: {{ mounts.mount }}
+Mounted device for {{  mounts.mount }} is {{ mounts.device }}
+{% endfor %}
+
+Server IP addresses:
+{% for ip in ansible_all_ipv4_addresses %}
+{{ ip }}
+{% endfor %} 
+
+
+
+

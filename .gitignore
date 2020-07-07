@@ -1,0 +1,9 @@
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+.terraform/*
+ops22
+ops22.pub
+.mitogen_ansible/*
+.pure_ansible/*
+.ansible/vault_password

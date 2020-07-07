@@ -1,0 +1,5 @@
+---
+ - import_tasks: install_nginx.yml
+ - import_tasks: configure_nginx.yml
+   # - import_tasks: install_renew_cert.yml
+ - import_tasks: copy_ssh_key.yml

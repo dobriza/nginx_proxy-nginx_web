@@ -1,0 +1,4 @@
+---
+- hosts: dobriza
+  roles:
+  - nginx
