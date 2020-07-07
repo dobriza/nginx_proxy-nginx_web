@@ -3,26 +3,26 @@
 # # # --------------------------------------------------------------------------------
 
 #create var with URL
-variable "url" {
-  type    = string
-  default = "https://gitlab.rebrainme.com/"
-}
+#variable "url" {
+#  type    = string
+#  default = "https://gitlab.rebrainme.com/"
+#}
 
 #declare an empty variable here
-variable "token" {}
+#variable "token" {}
 
 # Configure the GitLab Provider
-provider "gitlab" {
-  token    = var.token
-  base_url = var.url
-}
+#provider "gitlab" {
+#  token    = var.token
+#  base_url = var.url
+#}
 
 # Create project
-resource "gitlab_project" "OPS22" {
-  name             = "OPS22"
-  description      = "OPS22"
-  visibility_level = "private"
-}
+#resource "gitlab_project" "OPS22" {
+#  name             = "OPS22"
+#  description      = "OPS22"
+#  visibility_level = "private"
+#}
 
 # # # --------------------------------------------------------------------------------
 # # # ------- Create vms at Digital Ocean--------------------------------------------- 
@@ -42,14 +42,14 @@ resource "digitalocean_ssh_key" "key" {
 
 variable "vm_names_proxy" {
   type        = list(string)
-  default     = ["proxy01"]
+  default     = ["proxy0001"]
   description = "proxy vms for creation"
 
 }
 
 variable "vm_names_web" {
   type        = list(string)
-  default     = ["proxy04"]
+  default     = ["web0001"]
   description = "proxy vms for creation"
 
 }
