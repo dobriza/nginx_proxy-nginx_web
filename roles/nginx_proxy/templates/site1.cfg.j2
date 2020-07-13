@@ -1,12 +1,9 @@
 server {
-        ssl on;
-	ssl_certificate {{ test_ssl_crt }};
-	ssl_certificate_key {{ test_ssl_key }};
-        listen {{ nginxPortNumber }} default_server;
+        listen 80 default_server;
         root /var/www/site1/; 
         index index.html;
 	server_name {{ inventory_hostname }};
         location / {
-                try_files $uri $uri/ =404;
+                proxy_pass https://{{ web_name }};
         }
 }

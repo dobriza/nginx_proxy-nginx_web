@@ -28,9 +28,4 @@
       notify: restart nginx
       with_items:
         - { src: site1.cfg, dest: site1.cfg }
-    - name: create custom template with server parameters
-      template:
-          src: "{{ sites_config_template_directory }}/nginx_custom_template.j2"
-          dest: /tmp/resultFile
-      become: yes
 

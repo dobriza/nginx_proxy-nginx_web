@@ -6,4 +6,4 @@ ops22
 ops22.pub
 .mitogen_ansible/*
 .pure_ansible/*
-vault_password
+vault_pass

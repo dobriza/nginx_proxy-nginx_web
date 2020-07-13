@@ -1,13 +1,13 @@
   - name: install certbot NGINX plugin
-    apt:
+    apt: 
       name: "{{ item }}"
       update_cache: true
       state: present
     with_items:
             - 'certbot'
             - 'python3-certbot-nginx'
-  - name: getting a certificate and editing NGINX configuration
-    command: certbot --nginx --domain {{ inventory_hostname }} --email {{ email }} --agree-tos --redirect --quiet
+  - name: getting a certificate and editing NGINX configuration 
+    shell: certbot --nginx --domain {{ inventory_hostname }} --email {{ email }} --agree-tos --redirect --quiet
     args:
       creates: /etc/letsencrypt/live/{{ inventory_hostname }}
   - name: add cron job
@@ -15,4 +15,4 @@
       name: add certbot job
       special_time: daily
       job: certbot renew --force-renewal --quiet --renew-hook 'service nginx reload'
-
+    

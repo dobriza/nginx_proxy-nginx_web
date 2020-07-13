@@ -1,4 +1,5 @@
 ---
 - hosts: proxy
+  gather_facts: no
   roles:
   - nginx_proxy

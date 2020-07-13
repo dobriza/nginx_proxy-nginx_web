@@ -1,14 +1,14 @@
 ---
-    - name: install nginx latest version
-      apt:
+    - name: install nginx latest version 
+      apt: 
         name: nginx
         state: latest
-    - name: delete default site
-      file:
+    - name: delete default site 
+      file:      
         path: /etc/nginx/sites-available/default
         state: absent
       become: yes
-    - name: start nginx
+    - name: start nginx 
       service:
         name: nginx
         state: started
