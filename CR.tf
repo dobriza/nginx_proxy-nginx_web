@@ -1,34 +1,34 @@
-## # # ------------------------------------------------------------------------------------------------
-## # # ------- Create GitLab repo ---------------------------------------------------------------------
-## # # ------------------------------------------------------------------------------------------------
+# # # ------------------------------------------------------------------------------------------------
+# # # ------- Create GitLab repo ---------------------------------------------------------------------
+# # # ------------------------------------------------------------------------------------------------
 
 
 
-##create var with URL
+#create var with URL
 
-#variable "url" {
-#  type    = string
-#  default = "https://gitlab.rebrainme.com/"
-#}
-#
-##declare an empty variable here
+variable "url" {
+  type    = string
+  default = "https://gitlab.rebrainme.com/"
+}
 
-#variable "token" {}
-#
-## Configure the GitLab Provider
+#declare an empty variable here
 
-#provider "gitlab" {
-#  token    = var.token
-#  base_url = var.url
-#}
-#
-## Create project
+variable "token" {}
 
-#resource "gitlab_project" "OPS22" {
-#  name             = "OPS22"
-#  description      = "OPS22"
-#  visibility_level = "private"
-#}
+# Configure the GitLab Provider
+
+provider "gitlab" {
+  token    = var.token
+  base_url = var.url
+}
+
+# Create project
+
+resource "gitlab_project" "OPS22" {
+  name             = "OPS22"
+  description      = "OPS22"
+  visibility_level = "private"
+}
 
 
 
