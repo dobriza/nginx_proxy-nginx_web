@@ -95,7 +95,7 @@ resource "digitalocean_droplet" "vms_web" {
 
 
 
-# Declare variables that stores keys 
+# Declare variables that stores access keys 
 
 variable "access_key" {}
 variable "secret_key" {}
